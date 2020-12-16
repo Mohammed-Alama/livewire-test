@@ -1,8 +1,6 @@
 <div>
-
-    <input type="text" wire:model="name">
-
-    Hello {{$name}} {{$anotherName}}
-
-    Number Of Requests {{$count}}
+    @foreach ($names as $key => $name)
+        @livewire('say-hay',['name' =>$name])
+        <button wire:click="removeContact({{$key}})">Remove Contact</button>
+    @endforeach
 </div>
